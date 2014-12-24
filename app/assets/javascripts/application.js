@@ -21,20 +21,12 @@
 
 var ready = function(){
   $(".brand-mini").hide();
-  $(".comment_container").hide();
+  $(".expanded_content").hide();
 
-  $(".expand_comment").click(function(){
-    if($(this).html()=="View Comments"){
-      $(this).parent(".comment_toggle").siblings(".comment_container").stop().slideDown();
-      $(this).html("Hide Comments");
-    }
-    else{
-
-      $(this).parent(".comment_toggle").siblings(".comment_container").stop().slideUp();
-      $(this).html("View Comments");
-    }
+  $(".expand_content").click(function(){
+    $(this).parents('.truncated_content').hide();
+    $(this).parents('.truncated_content').siblings('.expanded_content').show();
   });
-  $("[data-toggle='popover']").popover();
 
 };
 $(document).ready(ready);

@@ -51,3 +51,6 @@ gem 'premailer-rails'
 gem 'autoprefixer-rails'
 gem 'paperclip'
 gem 'bootsy'
+
+# HTML truncator
+gem 'html_truncator'
