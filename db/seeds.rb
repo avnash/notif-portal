@@ -8,16 +8,20 @@
 
 tag1 = Tag.new
 tag1.name = "mess"
+tag1.color = "#1abc9c"
 tag1.save
 
 tag2 = Tag.new
 tag2.name = "stufac"
+tag1.color = "#2ecc71"
 tag2.save
 
 tag3 = Tag.new
 tag3.name = "gen"
+tag1.color = "#3498db"
 tag3.save
 
 tag4 = Tag.new
 tag4.name = "scrap"
+tag1.color = "#e74c3c"
 tag4.save
