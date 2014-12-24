@@ -1,0 +1,19 @@
+<% content_for :title do%>
+  Resolved Complaints
+<% end %>
+
+<% if signed_in? %>
+
+
+<br>
+<% @posts.each do |post| %>
+  <%= render post %>
+<% end %>
+
+<% if @posts.length==0 %>
+  <div>No posts are active in this category.</div>
+<% end %>
+
+<% else %>
+  <%= render 'shared/unsigned' %>
+<% end %>
