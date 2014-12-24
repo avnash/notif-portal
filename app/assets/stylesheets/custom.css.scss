@@ -376,8 +376,9 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
 .post_div{
   background:rgb(255,255,255);
   float:left;
+  width:34%;
   padding:15px 20px 20px 20px;
-  margin-bottom:15px;
+  margin:5px;
   box-shadow:0 0px 5px -2px rgba(100,100,100,0.9);
   display:none;
 }
@@ -424,6 +425,7 @@ ul{
   margin:15px 0;
   padding:15px;
   width:28%;
+  height:500px;
   float:right;
   background:rgb(255,255,255);
   box-shadow:0 0px 5px -2px rgba(100,100,100,0.9);

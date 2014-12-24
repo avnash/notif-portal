@@ -1,4 +1,4 @@
-<div class="post_div <%=post.id%> col-sm-12">
+<div class="post_div <%=post.id%>">
   <div class="post_data">
   <div class="post_title">
     <%= link_to HTML_Truncator.truncate(post.title, 40, :ellipsis => '......', :length_in_chars => true), post_path(id: post.id) %>
