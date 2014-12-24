@@ -8,22 +8,18 @@ Rails.application.routes.draw do
 
   root 'tags#index'
 
-  resources :users, only:[:show,:update,:edit]
   resources :notifications, only: [:index, :show]
   resources :sessions, only: [:create, :delete]
   resources :posts
-  resources :comments, only: [:create, :destroy, :edit]
   resources :tags, only: [:index, :show, :update]
   resources :follows, only: [:create, :destroy]
-  resources :angers, only: [:update]
 
   match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/angers', to: 'angers#create', via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/solved', to: 'posts#solved', via: 'get'
+  match '/expired', to: 'posts#expired', via: 'get'
   match '/search', to: 'posts#search', via: 'get'
   match '/get_file', to: 'posts#get_file', via: 'get'
-  match '/complaints', to: 'users#complaints', via: 'get'
+  match '/mynotifs', to: 'users#mynotifs', via: 'get'
   get '/tag/:id', to: 'tags#display', as: 'display'
 
   #  get 'static_pages/home'

@@ -1,13 +1,10 @@
 class Post < ActiveRecord::Base
 
   belongs_to :user, inverse_of: :posts
-  has_many :comments, inverse_of: :post, dependent: :destroy
   has_many :notifications, inverse_of: :post
   has_and_belongs_to_many :tags
   has_many :follows
   has_many :users, through: :follows
-  has_many :angers
-  has_many :users, through: :angers
 
   validates :title, presence: true
   validates :tags, presence: true, length: {in: 1..4}

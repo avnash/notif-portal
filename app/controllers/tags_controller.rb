@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
 
   def index
-    @posts = Post.where("solved=?",false).reverse_order
+    @posts = Post.where("expired=?",false).reverse_order
   end
 
   def show
@@ -10,7 +10,7 @@ class TagsController < ApplicationController
 
   def display
     @tag = Tag.find(params[:id])
-    @posts = Tag.includes(:posts).find(@tag.id).posts.where("solved=?", false).reverse_order
+    @posts = Tag.includes(:posts).find(@tag.id).posts.where("expired=?", false).reverse_order
   end
 
   def update

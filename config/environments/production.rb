@@ -27,7 +27,7 @@ Rails.application.configure do
   config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true #changed it to true 
+  config.assets.compile = true #changed it to true
 
   # Generate digests for assets URLs.
   config.assets.digest = true
@@ -38,18 +38,18 @@ Rails.application.configure do
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
-   
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.smtp_settings = {
   address           : "smtp2.iitm.ac.in",
-  port              : 25,            
-  domain            : "feedback",
+  port              : 25,
+  domain            : "notif",
   authentication    : "login",
   user_name         : "ch12b034",
   password          : "-2kV8I@h",
-  enable_starttls_auto : true 
+  enable_starttls_auto : true
   }
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.

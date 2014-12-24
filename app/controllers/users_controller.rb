@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def complaints
+  def mynotifs
     @user = current_user
     @posts = Post.where("user_id = ?", current_user.id)
   end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
       end
     end
 
-    def user_params 
+    def user_params
       params.require(:user).permit(:nick,:room,:hostel,:email,:contact,:avatar)
     end
   end

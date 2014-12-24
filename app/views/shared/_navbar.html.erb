@@ -9,17 +9,16 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "S", root_path, class:"navbar-brand brand-mini"%>
-      <%= link_to "Feedback Home", root_path, class:"navbar-brand" %>
+      <%= link_to "Notifs Home", root_path, class:"navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
-          <li><%= link_to "Give Feedback", new_post_path %></li>
-          <li> <%= link_to "My Feedback", complaints_path %></li>
         <% if current_user.usertype %>
-        <li><%= link_to "Edit My Tag", tag_path(id:current_user.usertype) %></li>
+          <li><%= link_to "Add Notif", new_post_path %></li>
+          <li> <%= link_to "My Notifs", mynotifs_path %></li>
       <%end%>
       <li class="dropdown">
         <a href="#" data-toggle="dropdown"> </span> Categories <b class="caret"></b></a>
@@ -29,11 +28,11 @@
         </li>
           <% for tag in Tag.all %>
           <li  data-container="body" data-trigger="hover" data-toggle="popover" data-content='<%= tag.description  %>' data-placement="left" >
-            <%= link_to "#{tag.name.capitalize} <span class='badge pull-right'>#{Tag.includes(:posts).find(tag.id).posts.where("solved=?",false).length}</span>".html_safe, display_path(id:tag.id) %>
+            <%= link_to "#{tag.name.capitalize} <span class='badge pull-right'>#{Tag.includes(:posts).find(tag.id).posts.where("expired=?",false).length}</span>".html_safe, display_path(id:tag.id) %>
           </li>
           <% end %>
           <li>
-            <%= link_to "Resolved Complaints<span class='badge pull-right'>#{Post.where("solved=?",true).length}</span>".html_safe, solved_path %>
+            <%= link_to "Expired Notifs<span class='badge pull-right'>#{Post.where("expired=?",true).length}</span>".html_safe, expired_path %>
           </li>
         </ul>
       </li>

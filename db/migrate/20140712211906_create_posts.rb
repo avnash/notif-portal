@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration
       t.belongs_to :user, null: false
       t.text :title, null: false
       t.string :file_link
-      t.boolean :solved, null: false, default: false
+      t.boolean :expired, null: false, default: false
       t.text :content, null: false
       t.integer :notifications_count, null: false, default: 0
       t.boolean :anonymous, null:false, default: false

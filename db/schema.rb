@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20140926155405) do
     t.integer  "user_id",                             null: false
     t.text     "title",                               null: false
     t.string   "file_link"
-    t.boolean  "solved",              default: false, null: false
+    t.boolean  "expired",              default: false, null: false
     t.text     "content",                             null: false
     t.integer  "notifications_count", default: 0,     null: false
     t.boolean  "anonymous",           default: false, null: false
