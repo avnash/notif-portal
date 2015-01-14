@@ -1,28 +1,29 @@
 <div class="post_div <%=post.id%>">
   <div class="post_data">
-  <div class="post_title">
-    <%= link_to HTML_Truncator.truncate(post.title, 40, :ellipsis => '......', :length_in_chars => true), post_path(id: post.id) %>
-  </div>
+    <div class="truncated_content">
+    <div class="post_title">
+      <%= link_to HTML_Truncator.truncate(post.title, 40, :ellipsis => '......', :length_in_chars => true), post_path(id: post.id) %>
+    </div>
 
-  <div class="post_content">
-  <% require "html_truncator" %>
-  <div class="truncated_content">
-    <%= raw HTML_Truncator.truncate(post.content, 200, :ellipsis => '......', :length_in_chars => true) %>
-  </div>
-  <div class="expanded_content"><%= raw post.content %></div>
-    <% if post.file_link%>
+    <div class="post_content">
+      <% require "html_truncator" %>
+        <%= raw HTML_Truncator.truncate(post.content, 200, :ellipsis => '......', :length_in_chars => true) %>
+      <div class="expanded_content"><%= raw post.content %></div>
+      <% if post.file_link%>
+        <br>
+        <%= link_to post.file_link, get_file_path(post_id: post.id), target: "_tab"%>
+      <% end %>
       <br>
-      <%= link_to post.file_link, get_file_path(post_id: post.id), target: "_tab"%>
-    <% end %>
-    <br>
-</div>
-</div>
-
+    </div>
   <div class="tags_container"><% @tags = Post.includes(:tags).find(post.id).tags %>
   <% @tags.each do |tag| %>
       <%= link_to tag.name.capitalize, display_path(id:tag.id), class:"tag_link" %>
   <% end %>
   </div>
+    </div>
+  </div>
+
+
 
       <% if signed_in? && (current_user.usertype)%>
     <div class="options_container">
@@ -39,4 +40,5 @@
       <div class='strip' style="background-color:<%= tag.color %>;">
       </div>
     <% end %>
+</div>
 </div>

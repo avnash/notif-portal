@@ -476,3 +476,20 @@ a.email-link {
 .navbar-collapse{
   padding:0 !important;
 }
+.modal{
+  background:rgba(0,0,0,0.1);
+}
+
+.expanded{
+  position:absolute;
+  top:100px;
+  height:calc(100% - 100px);
+  overflow-y:scroll;
+  background:rgba(255,255,255,1);
+  z-index:991 !important;
+
+}
+.expanded_data{
+  margin:auto;
+  float:none !important;
+}
