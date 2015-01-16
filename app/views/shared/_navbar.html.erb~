@@ -25,7 +25,7 @@
                 </nav>
             </div>
             
-           <div id = 'dnb_sec' class='dnb_secondary col-xs-12' data-0="margin-top:0px; position:relative; background-color:rgba(52, 152, 219,1);" data-50=" margin-top:0px; position:fixed; background-color:rgba(255, 255, 255,0.99);">
+            <div id = 'dnb_sec' class='dnb_secondary col-xs-12' <div id = 'dnb_sec' class='dnb_secondary col-xs-12' data-0="margin-top:0px; position:relative; background-color:rgba(52, 152, 219,1);" data-50=" margin-top:0px; position:fixed; background-color:rgba(255, 255, 255,0.99);">
                 <nav>
                     <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
                         Notification<b>&nbsp;Portal</b>&nbsp;</div>

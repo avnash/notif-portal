@@ -237,7 +237,7 @@ width: 100%;
 bottom:0%;
 background-color:rgb(52,152,219);
 position: relative;
-box-shadow: 0 -3px 5px -2px rgba(29,111,165,0.9); 
+box-shadow: 0 -3px 5px -2px rgba(200,200,200,0.9);
 }
 
 .done>li>a{
