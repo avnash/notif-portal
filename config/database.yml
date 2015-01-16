@@ -14,12 +14,16 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: abhi
+  password: sai
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: updates_development
+
+students_1415:
+  <<: *default
+  database: students_1415
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

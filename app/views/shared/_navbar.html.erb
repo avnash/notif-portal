@@ -32,16 +32,17 @@
                     </span>
                     
                     <span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
-                        <b>Categories&nbsp;</b><span class="caret"></span>
+                    <a  data-toggle="modal" data-target=".bs-example-modal-lg">
+                          Categories
+                        </a>
+                        
                     </div>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Option 1</a></li>
-                            <li><a href="#">Option 2</a></li>
-                            <li><a href="#">Option 3</a></li>
-                            <li><a href="#">Option 4</a></li>
-                            <li><a href="#">Option 5</a></li>
-                            <li><a href="#">Option 6</a></li>
-                        </ul></span>
+                     <!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                            <% for  tag in Tag.all %>
+                           <li> <a><%= tag.name %></a></li>
+                            <% end%>
+                            
+                        </ul>--></span>
                     
                     <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
@@ -117,3 +118,35 @@
                 </nav>
             </div>
         </div>
+
+
+<div class="modal  bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <%=form_for(:sub, url: update_path, :method=> :put , :html => { :class => "form-horizontal"},remote: true) do |f| %>
+<% for tag in Tag.all %>
+<p>
+    <%=f.label tag.name %><br>
+    <%=check_box_tag  'list[]',tag.id,@check.include?(tag.id.to_s) %>
+</p>
+<%end %>
+<%= f.submit :update %>
+<% end %>
+
+
+                            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    
+    </div>
+  </div>
+</div>

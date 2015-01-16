@@ -1,0 +1,9 @@
+<%=form_for(:sub, url: update_path, :method=> :put , :html => { :class => "form-horizontal"},remote: true) do |f| %>
+<% for tag in Tag.all %>
+<p>
+	<%=f.label tag.name %><br>
+	<%=check_box_tag  'list[]',tag.id,@check.include?(tag.id.to_s) %>
+</p>
+<%end %>
+<%= f.submit :update %>
+<% end %>
