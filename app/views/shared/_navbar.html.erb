@@ -129,18 +129,7 @@
         <h4 class="modal-title">Modal title</h4>
       </div>
       <div class="modal-body">
-        <%=form_for(:sub, url: update_path, :method=> :put , :html => { :class => "form-horizontal"},remote: true) do |f| %>
-<% for tag in Tag.all %>
-<p>
-    <%=f.label tag.name %><br>
-    <%=check_box_tag  'list[]',tag.id,@check.include?(tag.id.to_s) %>
-</p>
-<%end %>
-<%= f.submit :update %>
-<% end %>
-
-
-                            
+              
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
