@@ -1,9 +1,0 @@
-<div id="footer">
-	<div class="container-fluid footer-container">
-      		<ul class="nav navbar-nav navbar-left done">
-      			<li class="book"><a href="#">Copyrights @ Institute WebOps 14-15</a></li>
-      			<li class="book"><a href="#">About us</a></li>
-      			<li class="book"><a href="#">Contact us</a></li>
-      		</ul>
-      	</div>
-</div>
