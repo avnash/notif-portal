@@ -83,30 +83,30 @@ ActiveRecord::Schema.define(version: 20141224180523) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: true do |t|
-    t.integer  "user_id"
-    t.string   "username",            limit: 15,              null: false
-    t.string   "fullname",            limit: 80,              null: false
-    t.integer  "room"
-    t.string   "hostel",              limit: 40
-    t.text     "profile_picture",                             null: false
-    t.datetime "time_of_reg"
-    t.string   "current_mess",        limit: 40
-    t.string   "comment",             limit: 50
-    t.string   "remember_token",      limit: 128
-    t.string   "bgroup",              limit: 5
-    t.integer  "contact",             limit: 8,   default: 0
-    t.string   "email"
-    t.string   "nick"
-    t.string   "gender",              limit: 1
-    t.string   "picaddress",          limit: 50
-    t.datetime "updated_timestamp"
-    t.text     "usertype"
-    t.integer  "notifications_count",             default: 0, null: false
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.string   "avatar_file_name"
-    t.string   "typename",            limit: 40
+    t.integer   "user_id"
+    t.string    "username",            limit: 15,              null: false
+    t.string    "fullname",            limit: 80,              null: false
+    t.integer   "room"
+    t.string    "hostel",              limit: 40
+    t.text      "profile_picture",                             null: false
+    t.datetime  "time_of_reg"
+    t.string    "current_mess",        limit: 40
+    t.string    "comment",             limit: 50
+    t.string    "remember_token",      limit: 128
+    t.string    "bgroup",              limit: 5
+    t.integer   "contact",             limit: 8,   default: 0
+    t.string    "email"
+    t.string    "nick"
+    t.string    "gender",              limit: 1
+    t.string    "picaddress",          limit: 50
+    t.timestamp "updated_timestamp"
+    t.text      "usertype"
+    t.integer   "notifications_count",             default: 0, null: false
+    t.string    "typename",            limit: 40
+    t.string    "avatar_file_name"
+    t.string    "avatar_content_type"
+    t.integer   "avatar_file_size"
+    t.datetime  "avatar_updated_at"
   end
 
   add_index "users", ["username"], name: "UNIQUE", unique: true, using: :btree

@@ -15,7 +15,6 @@
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require bootsy
-
 //= require bootstrap-tooltip
 //= require bootstrap-popover
 //= require jquery.turbolinks

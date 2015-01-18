@@ -31,35 +31,38 @@
                         Notification<b>&nbsp;Portal</b>&nbsp;</div>
                     </span>
                     
-                    <span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
+                    <span class='col-xs-2 dropdown'><div class='btn2 col-xs-14 pull-left' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                     <a  data-toggle="modal" data-target=".bs-example-modal-lg">
                           Categories
                         </a>
                         
                     </div>
-<<<<<<< HEAD
+
  <% if signed_in? %>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Option 1</a></li>
-                            <li><a href="#">Option 2</a></li>
-                            <li><a href="#">Option 3</a></li>
-                            <li><a href="#">Option 4</a></li>
-                            <li><a href="#">Option 5</a></li>
-                            <li><a href="#">Option 6</a></li>
+                            <li>
+          			<%= link_to "All".html_safe, root_path%>
+        		    </li>
+          		    <% for tag in Tag.all %>
+          		    <li  data-container="body" data-trigger="hover" data-toggle="popover" data-content='<%= tag.description  %>' data-placement="left" >
+            		    <%= link_to "#{tag.name.capitalize}".html_safe, display_path(id:tag.id) %>
+			    </li>
+          		    <% end %>
+          		    <li>
+            			<%= link_to "Expired".html_safe, expired_path %>
+          		    </li>
                         </ul></span>
-=======
-                     <!-- <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                     <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <% for  tag in Tag.all %>
                            <li> <a><%= tag.name %></a></li>
                             <% end%>
                             
-                        </ul>--></span>
->>>>>>> f7bf836212e279e78c771d906fff8cb912c935d2
+                        </ul></span>
                     
                     <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
                             <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
-                                 <%= current_user.fullname%>
+                                 <%= current_user.username%>
                                 <span class="caret"></span>
                             </span>
                         </a>
@@ -79,6 +82,11 @@
                         <li class='hidden-xs hidden-sm hidden-md col-lg-2'>
                             <div class='btn2'>
                                <%= link_to "My Updates", mynotifs_path,{:data=>{:'0'=>"color:rgb(255,255,255)", :'50'=>"color:rgb(0,0,0)" }} %>
+                            </div>
+                        </li>
+			<li class='hidden-xs hidden-sm hidden-md col-lg-3'>
+                            <div class='btn2'>
+                               <%= link_to "Updates Home", root_path,{:data=>{:'0'=>"color:rgb(255,255,255)", :'50'=>"color:rgb(0,0,0)" }} %>
                             </div>
                         </li>
                     </ul>
