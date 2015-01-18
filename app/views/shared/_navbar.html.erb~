@@ -25,7 +25,7 @@
                 </nav>
             </div>
             
-            <div id = 'dnb_sec' class='dnb_secondary col-xs-12' <div id = 'dnb_sec' class='dnb_secondary col-xs-12' data-0="margin-top:0px; position:relative; background-color:rgba(52, 152, 219,1);" data-50=" margin-top:0px; position:fixed; background-color:rgba(255, 255, 255,0.99);">
+           <div id = 'dnb_sec' class='dnb_secondary col-xs-12' data-0="margin-top:0px; position:relative; background-color:rgba(52, 152, 219,1);" data-50=" margin-top:0px; position:fixed; background-color:rgba(255, 255, 255,0.99);">
                 <nav>
                     <span class='col-xs-2'><div class='btn2 col-xs-12 pull-left' id='dnb_secondary_logo' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
                         Notification<b>&nbsp;Portal</b>&nbsp;</div>
@@ -34,6 +34,7 @@
                     <span class='col-xs-2 dropdown'><div class='btn2 col-xs-12 pull-left' data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" data-toggle="dropdown">
                         <b>Categories&nbsp;</b><span class="caret"></span>
                     </div>
+ <% if signed_in? %>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                             <li><a href="#">Option 1</a></li>
                             <li><a href="#">Option 2</a></li>
@@ -46,74 +47,30 @@
                     <div class="hidden-sm hidden-xs col-md-2 dropdown pull-right">
                         <a class="pull-right dropdown-toggle col-xs-12" data-toggle="dropdown" href="#">
                             <span class="col-xs-12 btn2 glyphicon glyphicon-user pull-right" data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" aria-hidden="true">
-                                Username
+                                 <%= current_user.fullname%>
                                 <span class="caret"></span>
                             </span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">Option 1</a></li>
-                            <li><a href="#">Option 2</a></li>
+                            <li><%= link_to "Sign Out", signout_path, method: 'delete' %></li>
                         </ul>
                     </div>
-		    <% if signed_in? %>
+		   
         	    <% if current_user.usertype %>
                     <ul class='col-xs-6'>
-                        
-                        <li class='hidden-xs col-sm-3 col-md-3 col-lg-2'>
-                            <div class='btn2'>
-                                <a data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-          				<%= link_to "Add Update", new_post_path %>
-      
-                                </a>
-                            </div> 
-                        </li>
-                        <li class='hidden-xs col-sm-3 col-md-3 col-lg-2'>
-                            <div class='btn2'>
-                                <a data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                                   <%= link_to "My Updates", mynotifs_path %>
-                                </a>
-                            </div>
-                        </li>
-		<%end%><%end%>
-                        <li class='hidden-xs col-sm-3 col-md-3 col-lg-2'>
-                            <div class='btn2'><a data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" href="/js/">
-                                Services
-                                </a>
-                            </div>
-                        </li>
                         <li class='hidden-xs hidden-sm hidden-md col-lg-2'>
                             <div class='btn2'>
-                                <a data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" href="/jquery/">
-                                Litsoc
-                                </a>
+                                <%= link_to "Add Update", new_post_path,{:data=>{:'0'=>"color:rgb(255,255,255)", :'50'=>"color:rgb(0,0,0)" }}%>
                             </div>
                         </li>
+	<%end%>
                         <li class='hidden-xs hidden-sm hidden-md col-lg-2'>
                             <div class='btn2'>
-                                <a data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)" href="/jquery/">
-                                    TechSoc
-                                </a>
-                            </div>
-                        </li>
-                        <li class='col-xs-12 col-sm-3 col-md-3 col-lg-2'>
-                            <div class="dropdown btn2">
-                                <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"  data-0="color:rgb(255,255,255)" data-50="color:rgb(0,0,0)">
-                                    More
-                                    <span class="caret"></span>
-                                </a>
-                              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li class='visible-xs'><a href="#"><%= link_to "Add Update", new_post_path %></a></li>
-                                <li class='visible-xs'><a href="#">Office</a></li>
-                                <li class='visible-xs'><a href="#">Services</a></li>
-                                <li><a href="#">Schroeter</a></li>
-                                <li><a href="#">Alumni</a></li>
-                                <li class='hidden-lg'><a href="#">Techsoc</a></li>
-                                <li class='hidden-lg'><a href="#">Litsoc</a></li>
-                                  
-                              </ul>
+                               <%= link_to "My Updates", mynotifs_path,{:data=>{:'0'=>"color:rgb(255,255,255)", :'50'=>"color:rgb(0,0,0)" }} %>
                             </div>
                         </li>
                     </ul>
+	<%end%>
                 </nav>
             </div>
         </div>
