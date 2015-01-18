@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'tags#index'
-
+  resources :subscription
   resources :notifications, only: [:index, :show]
   resources :sessions, only: [:create, :delete]
   resources :posts
@@ -22,7 +22,9 @@ Rails.application.routes.draw do
   match '/mynotifs', to: 'users#mynotifs', via: 'get'
   get '/tag/:id', to: 'tags#display', as: 'display'
 
+
   #  get 'static_pages/home'
+  put 'update'=>'subscription#update'
 
   get 'static_pages/about'
   get 'static_pages/contact'

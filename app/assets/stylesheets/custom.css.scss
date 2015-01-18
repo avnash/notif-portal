@@ -329,6 +329,7 @@ box-shadow: 0 -3px 5px -2px rgba(29,111,165,0.9);
   padding: 5px 5px 0px 5px;
 }
 
+
 .author_name
 {
   background-color:rgb(22,229,0);
@@ -608,3 +609,7 @@ margin-top: -5px;
 #dnb_sec {
                -skrollr-animation-name:animation1;
             }
+.modal-backdrop
+{
+  z-index:0 !important;
+}
