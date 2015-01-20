@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   match '/get_file', to: 'posts#get_file', via: 'get'
   match '/mynotifs', to: 'users#mynotifs', via: 'get'
   get '/tag/:id', to: 'tags#display', as: 'display'
-
+  get 'subscribe'=>'subscription#index'  
 
   #  get 'static_pages/home'
   put 'update'=>'subscription#update'

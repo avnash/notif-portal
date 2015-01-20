@@ -1,8 +1,26 @@
 class TagsController < ApplicationController
 
   def index
-    @posts = Post.where("expired=?",false).reverse_order
+   if signed_in?
+      @user=Subscribe.find_by_user_id(current_user.id)
+      if @user
+          @s=@user.subscriptions 
+          @check=@s.split('|')
+        else
+          @check=''
+        end
+        @posts = []
+        @check.each do |sa|
+          @tag=Tag.find(sa)
+          @posts = @posts + Tag.includes(:posts).find(@tag.id).posts.where("expired=?", false).reverse_order
+        end
+    else
+       
+       @posts = Post.where("expired=?",false).reverse_order
+     end
   end
+   
+   
 
   def show
     @tag = Tag.find(params[:id])

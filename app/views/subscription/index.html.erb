@@ -1,3 +1,7 @@
+<%= content_for :title do %>
+  Preferences
+<% end %>
+
 <%=form_for(:sub, url: update_path, :method=> :put , :html => { :class => "form-horizontal"},remote: true) do |f| %>
 <% for tag in Tag.all %>
 <p>

@@ -2,17 +2,21 @@ class SubscriptionController < ApplicationController
 
 def index
 	@sai="saikiran"
-	@user=Subscribe.find_by_user_id('199')
-	@s=@user.subscriptions
-	@check=@s.split('|')
+	@user=Subscribe.find_by_user_id(current_user.id)
+	if @user
+		@s=@user.subscriptions 
+		@check=@s.split('|')
+    else
+    	@check=''
+    end
+
 end
 
 def show
 end
 def update
 
-	roll=session[:user_id]=199
-	@user=Subscribe.find_by_user_id(roll)
+	@user=Subscribe.find_by_user_id(current_user.id)
 	array=params[:list]
 	var=""
 	array.each do |a|
@@ -25,7 +29,7 @@ def update
 	else
 		@subscribe=Subscribe.new()
 		@subscribe.subscriptions=var
-		@subscribe.user_id=roll
+		@subscribe.user_id=current_user.id
 		@subscribe.save
 		respond_to do |format|
 			format.html { redirect_to root_path }
