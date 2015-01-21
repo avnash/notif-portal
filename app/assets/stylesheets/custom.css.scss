@@ -426,6 +426,7 @@ ul{
 }
 
 .sidebar{
+text-align:center;
   margin:15px;
   padding:15px;
   width:336px;
@@ -612,4 +613,27 @@ margin-top: -5px;
 .modal-backdrop
 {
   z-index:0 !important;
+}
+
+
+
+
+.month
+{
+  width:50%;
+  border:1px solid white;
+  background:blue;
+  height:25%;
+  float:left;
+  text-align:center;
+  font-size: 30px;
+  color:white;
+
+}
+.month0
+{
+  width:100%;
+  height:25%;
+  background:green;
+  text-align:center;
 }

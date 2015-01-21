@@ -96,7 +96,6 @@ class PostsController < ApplicationController
 
     if params[:date]
       selected_date = Date.parse(params[:date])
-      # This will look for records on the given date between 00:00:00 and 23:59:59
       @posts = @posts + Post.where(:created_at => selected_date.beginning_of_day..selected_date.end_of_day).reverse_order
     end  
 

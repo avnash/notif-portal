@@ -60,6 +60,17 @@ $(document).on("ready page:change", function () {
         LoadMore();
         $('.post_div:lt("' + counter + '")').show();
     });
+
+    var background=["#2ecc71","#1abc9c","#e74c3c","#e67e22","#f1c40f","#8e44ad"];
+    var i=0;
+    for(i=0;i<7;i++)
+    {
+      var j=Math.floor((Math.random() * 6) );
+      $('.month'+i).css({'background':background[j]});
+    }
+
+
+
 });
 
 $(window).scroll(function(){
@@ -77,3 +88,4 @@ $(window).scroll(function(){
   }
 });
   
+
